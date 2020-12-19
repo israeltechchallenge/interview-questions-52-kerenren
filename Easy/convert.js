@@ -13,8 +13,8 @@ If you get stuck on a challenge, find help in the Resources tab.
 If you're really stuck, unlock solutions in the Solutions tab.
 */
 
-function convert(/*args*/) {
-  //your code
+function convert(hr, mi) {
+  return hr * 60 * 60 + mi * 60;
 }
 
 exports.solution = convert;
