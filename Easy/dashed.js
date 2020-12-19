@@ -10,8 +10,31 @@ Notes
 A string can contain uppercase and lowercase vowels.
 */
 
-function dashed( /*args*/ ) {
-  //your code
+function dashed(string) {
+  const vowel = ["a", "e", "i", "o", "u"];
+  // solution 1:
+  // const vowelComplete = vowel.concat(
+  //   vowel.map((letter) => {
+  //     return letter.toUpperCase();
+  //   })
+  // );
+
+  // solution 2:
+  const vowelComplete = vowel
+    .map((letter) => {
+      return [letter, letter.toUpperCase()];
+    })
+    .flat();
+
+  return [...string]
+    .map((letter) => {
+      if (vowelComplete.includes(letter)) {
+        return `-${letter}-`;
+      } else {
+        return letter;
+      }
+    })
+    .join("");
 }
 
 exports.solution = dashed;
