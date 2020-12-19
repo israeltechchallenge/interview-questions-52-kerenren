@@ -11,8 +11,23 @@ Notes
 If the input tries to divide by 0, return: "Can't divide by 0!"
 */
 
-function calculator( /*args*/ ) {
-  //your code
+function calculator(numOne, operator, numTwo) {
+  switch (operator) {
+    case "+":
+      return numOne + numTwo;
+    case "-":
+      return numOne - numTwo;
+    case "*":
+      return numOne * numTwo;
+    case "/":
+      if (numTwo === 0) {
+        return "Can't divide by 0!"
+      } else {
+        return numOne / numTwo;
+      }
+    default:
+      break;
+  }
 }
 
 exports.solution = calculator;
