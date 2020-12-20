@@ -21,7 +21,6 @@ factorChain([10, 1]) ➞ false
 function factorChain(arr) {
   for (let i = 0; i < arr.length -1; i++) {
     if (arr[i + 1] % arr[i] !== 0) {
-      console.log("in false",arr[i+1])
       return false;
     }
   }
