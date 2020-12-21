@@ -13,8 +13,23 @@ The array may contain duplicates.
 Multiple solutions can exist, any solution is sufficient to return true.
 */
 
-function canPartition( /*args*/ ) {
-  //your code
+
+function canPartition(list) {
+  let accumulator;
+
+  if (list.length > 1)
+      for (let i = 0; i < list.length; i++) {
+          accumulator = 1;
+          for (let j = 0; j < list.length; j++) {
+
+              if (i !== j) {
+                  accumulator *= list[j]
+              }
+          }
+          if (accumulator === list[i])
+              return true;
+      }
+  return false;
 }
 
 exports.solution = canPartition;
