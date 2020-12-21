@@ -40,8 +40,21 @@ Notes
 There might be a floating point precision problem in here...
 */
 
-function getTotalPrice( /*args*/ ) {
-  //your code
+function getTotalPrice(productsList) {
+  let totalPrice = 0;
+
+  async function result() {
+    await Promise.all(
+      productsList.map((item) => {
+        const { quantity, price } = item;
+        return (totalPrice += price * quantity);
+      })
+    );
+  }
+
+  result();
+
+  return parseFloat(totalPrice.toFixed(1));
 }
 
 exports.solution = getTotalPrice;
